@@ -85,8 +85,7 @@ export default {
         MyHeader
     },
     data: function () {
-        return {
-        };
+        return {};
     },
     methods: {
         beginAnimation: function() {
@@ -94,12 +93,8 @@ export default {
             tl.from("#lower-rays", 10, {rotation:"+=360", transformOrigin:"50% 50%", ease:Linear.easeNone,repeat:-1});
         }
     },
-    beforeMount: function() {
-        // this.beginAnimation()
-    },
-    mounted: function() {
-        window.addEventListener('load', () => {
-            console.log("hey")
+    mounted () {
+        this.$nextTick(() => {
             this.beginAnimation()
         })
     }
@@ -108,7 +103,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-    // background-color: #262626;
     background: url('~/assets/img/small_world.png') no-repeat center center;
     background-size: cover;
     min-height: 100vh;

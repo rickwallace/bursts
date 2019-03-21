@@ -10,7 +10,10 @@
                     <nuxt-link to="/avatar">Avatar</nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/my_steez">Levels to This</nuxt-link>
+                    <nuxt-link to="/layers">Levels to This</nuxt-link>
+                </li>
+                <li>
+                    <nuxt-link to="/perspective">Levels to This - Head On</nuxt-link>
                 </li>
             </ul>
         </main>
