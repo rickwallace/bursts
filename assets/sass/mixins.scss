@@ -1,0 +1,92 @@
+/* ==========================================================================
+  mixins.scss
+
+  Purpose: holds all of our lovely sass mixins
+========================================================================== */
+
+@mixin opacity($opacity) {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  /* IE 5-7 */
+  filter: alpha(opacity= ($opacity*100) );
+  /* Netscape */
+  -moz-opacity: $opacity;
+  /* Safari 1.x */
+  -khtml-opacity: $opacity;
+  /* Good browsers */
+  opacity: $opacity;
+}
+
+@mixin rotate($degrees) {
+  -ms-transform: rotate($degrees + deg); /* IE 9 */
+  -webkit-transform: rotate($degrees + deg); /* Chrome, Safari, Opera */
+  transform: rotate($degrees + deg);
+}
+
+@mixin box-shadow( $horiz : .5em , $vert : .5em , $blur : 0px , $spread : 0px , $color : #000000, $set : inset ){
+  box-shadow: $horiz $vert $blur $spread $color $set;
+  -webkit-box-shadow: $horiz $vert $blur $spread $color $set;
+  -moz-box-shadow: $horiz $vert $blur $spread $color $set;
+  -ms-box-shadow: $horiz $vert $blur $spread $color $set;
+  -o-box-shadow: $horiz $vert $blur $spread $color $set;
+}
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin font-size($size: 1.6, $line: $size * 1.5) {
+  font-size: ($size * 10) + px;
+  line-height: ($line * 10) + px;
+  font-size: $size + rem;
+  line-height: $line + rem;
+}
+
+@mixin letter-spacing($spacing) {
+  letter-spacing: ($spacing * 10) + px; 
+  letter-spacing: $spacing + rem;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: ($top * 10) + px;
+  margin-right: ($right * 10) + px;
+  margin-bottom: ($bottom * 10) + px;
+  margin-left: ($left * 10) + px;
+  margin-top: $top + rem;
+  margin-right: $right + rem;
+  margin-bottom: $bottom + rem;
+  margin-left: $left + rem;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: ($top * 10) + px;
+  padding-right: ($right * 10) + px;
+  padding-bottom: ($bottom * 10) + px;
+  padding-left: ($left * 10) + px;
+  padding-top: $top + rem;
+  padding-right: $right + rem;
+  padding-bottom: $bottom + rem;
+  padding-left: $left + rem;
+}
+
+@mixin border-radius($radius) {
+  -o-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($property, $length, $timing-function: ease) {
+  -moz-transition: $property $length $timing-function; /* Firefox 4 */
+  -webkit-transition: $property $length $timing-function; /* Safari and Chrome */
+  -o-transition: $property $length $timing-function; /* Opera */
+  -ms-transition: $property $length $timing-function;
+  transition: $property $length $timing-function;
+}
