@@ -114,6 +114,7 @@ export default {
 }
 
 $radius: 400;
+$easing: ease-in-out;
 
 .circle {
     display: flex;
@@ -124,14 +125,14 @@ $radius: 400;
     border-radius: 50%;
     background-color: rgba(#6b4242, 0.3);
     transform: scale(0);
-    animation: 1.5s bounceIn 0.5s ease-in-out forwards;
+    animation: 1.5s bounceIn 0.5s $easing forwards;
 }
 
 .phone {
     height: $radius * 1px;
     width: $radius * 1px;
     transform: scale(0);
-    animation: 1.5s bounceIn 0.5s ease-in-out forwards;
+    animation: 1.5s bounceIn 0.5s $easing forwards;
     img {
         position: absolute;
         &.base {
@@ -143,13 +144,13 @@ $radius: 400;
             left: 6px;
         }
         &.base {
-            animation: 3.5s wave 3.6s ease-in-out infinite; 
+            animation: 3.5s wave 3.6s $easing infinite; 
         }
         &.code {
-            animation: 1.5s move-code 3.3s ease-in-out forwards, 3.5s wave 3.3s ease-in-out infinite; 
+            animation: 1.5s move-code 3.3s $easing forwards, 3.5s wave 3.3s $easing infinite; 
         }
         &.visual { 
-            animation: 1.5s move-visual 3.0s ease-in-out forwards, 3.5s wave 3.0s ease-in-out infinite; 
+            animation: 1.5s move-visual 3.0s $easing forwards, 3.5s wave 3.0s $easing infinite; 
         }
 
     }
