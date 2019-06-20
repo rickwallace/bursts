@@ -15,6 +15,15 @@
                 <li>
                     <nuxt-link to="/perspective">Levels to This - Head On</nuxt-link>
                 </li>
+                <li>
+                    <nuxt-link to="/cookie">She&apos;s Alive</nuxt-link>
+                </li>
+                <li>
+                    <nuxt-link to="/sandbox">Sandbox</nuxt-link>
+                </li>
+                <li>
+                    <nuxt-link to="/cake">Cake</nuxt-link>
+                </li>
             </ul>
         </main>
     </section>
